@@ -1,7 +1,11 @@
-const images = document.querySelectorAll('img');
-images.forEach(img => {
-    img.addEventListener('click', () => {
-        images.forEach(i => i.classList.remove('active'));
-        img.classList.add('active');
-    });
-});
+function filterPhotos(category) {
+  const photos = document.querySelectorAll(".photo");
+
+  photos.forEach(photo => {
+    if (category === "all" || photo.classList.contains(category)) {
+      photo.style.display = "block";
+    } else {
+      photo.style.display = "none";
+    }
+  });
+}
